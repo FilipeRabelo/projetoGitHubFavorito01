@@ -56,8 +56,7 @@
 
 
 
-
-    async add(username){                                  // precisar ir buscar o usuario no github   // ASSINCRONISMO //
+    async add(username){                                  // precisa ir buscar o usuario no github   // ASSINCRONISMO //
 
       // TRATAMENTO DE ERROR // 
       try{                                                // tente fazer
@@ -69,6 +68,8 @@
         }
 
         this.entrieDates = [user, ...this.entrieDates];   // user = novo usuario - ...this.entrieDate trazendo os outros usuarios
+        this.update()                                     // update vai remover e reescrever todo o html com o novo usuario
+
 
       }catch(error){                                      // capture o erro 
         alert(error.message);
