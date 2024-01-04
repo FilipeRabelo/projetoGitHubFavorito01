@@ -31,8 +31,7 @@
       this.root = document.querySelector(root)     // procurando para exsitri o tempo todo
       this.load();                                 // para carregar a funcao load
 
-      GithubUser.search('FilipeRabelo').then(user => console.log(user))  // promise user é o retono d fecth(endpoint)
-
+      // GithubUser.search('FilipeRabelo').then(user => console.log(user))  // promise user é o retono d fecth(endpoint)
     }
 
 
@@ -73,7 +72,7 @@
         }
 
         this.entrieDates = [user, ...this.entrieDates];   // user = novo usuario - ...this.entrieDate trazendo os outros usuarios
-        this.update()       ;                              // update vai remover e reescrever todo o html com o novo usuario
+        this.update();                                    // update vai remover e reescrever todo o html com o novo usuario
         this.save();
 
       }catch(error){                                      // capture o erro 
@@ -87,10 +86,12 @@
     delete(user){   // BOTÃO DE ESCLUIR //
       
       const filteredEntries = this.entrieDates.filter(entry => entry.login != user.login); // se false // NOVA CONSTANTE //
-      console.log(filteredEntries)     
+      // console.log(filteredEntries)     
 
       this.entrieDates = filteredEntries; // estou limpando todo o array entrieDates ecolocando um novo array dentro do entrieDate //
-      this.update()      
+      this.update();
+      this.save();
+
 
       // função de ordem superior 
       // higher-order function (map, filter, find, reduce...)
