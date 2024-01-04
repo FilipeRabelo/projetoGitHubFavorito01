@@ -55,6 +55,11 @@
     }
 
 
+    save(){
+      localStorage.setItem('@github-favorites:', JSON.stringify(this.entrieDates));
+    }
+
+
 
     async add(username){                                  // precisa ir buscar o usuario no github   // ASSINCRONISMO //
 
@@ -68,8 +73,8 @@
         }
 
         this.entrieDates = [user, ...this.entrieDates];   // user = novo usuario - ...this.entrieDate trazendo os outros usuarios
-        this.update()                                     // update vai remover e reescrever todo o html com o novo usuario
-
+        this.update()       ;                              // update vai remover e reescrever todo o html com o novo usuario
+        this.save();
 
       }catch(error){                                      // capture o erro 
         alert(error.message);
@@ -137,9 +142,11 @@
         row.querySelector('.repositories').textContent = user.public_repos;
         row.querySelector('.followers').textContent    = user.followers;
 
+        // butao X p fechar //
+
         row.querySelector('.remove').onclick = () => {  /* onclick para qndo houver somente um evento */
         
-          const isOk = confirm('Tem certeza que deseja deletar essa linha?');
+          const isOk = confirm('Tem certeza que deseja deletar esse Favorito?');
 
           if(isOk){  /* se for true */
             this.delete(user);
