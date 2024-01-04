@@ -1,0 +1,267 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  font-size: 62.5%;  /*62.5% para reseter o font-size para 10px*/
+
+  --ff-primary: "Poppins", sans-serif; /*--ff- -> fontsize*/
+  --text-color: #303030;
+
+  --hue: 194;
+  --primary-color: hsl(var(--hue), 100%, 63%);
+}
+
+
+/* CLASSE TOP PARA ESCODAR TUDO  - HIDE*/
+/* LABEL */
+.sr-only{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/*CLASSE TOP PARA ESCODAR TUDO  - HIDE*/
+
+body{
+  /* background-color: #7a38d4; */
+  background-color: black;
+  font-size: 1.6rem;   /*obrigatorio voltar para 1.6rem o font size*/
+  color: var(--text-color);
+}
+
+body *{ /* tudo dentro do body vai ter a font-family escolhida */
+  font-family: var(--ff-primary);
+}
+
+#app{
+  border-radius: 5px;
+  /* background-color: #7a38d4; */
+  padding: 2rem;
+  max-width: 500px; /*largura MAXIMA DE :*/
+  margin: 5rem auto; /*centraliza*/
+}
+
+header{
+  background-color: #7a38d4;
+  /* background-color: white; */
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem 0 2.5rem;
+  border-radius: 3px;
+}
+
+header h1{
+  font-size: 2.2rem;
+  color: black;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.search{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search input{
+  height: 3.2rem;
+  border: 1px solid #CCC;
+  border-radius: .4rem 0 0 .4rem;
+  padding: 0 .8rem;
+}
+
+.search button{
+  background-color: var(--primary-color);
+  border-radius: 0 .4rem .4rem 0;
+  height: 3.2rem;
+  border: none;
+  padding: 0 1rem;
+  color: #7a38d4;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.search:hover{
+  filter: brightness(1.1);
+  -webkit-filter: brightness(1.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 1rem 3rem -1rem rgba(0, 0, 255, 0.9);
+}
+
+table *{
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+table th{
+  color: black;
+  /* background-color: var(--primary-color); */
+  background-color: #7a38d4;
+  text-align: center;
+  font-weight: bold;
+  padding: 1.5rem;
+  font-size: 1.4rem;
+}
+
+/* pseudo-class */
+table th:first-child{
+  border-top-left-radius: .4rem;
+}
+
+table th:last-child{
+  border-top-right-radius: .4rem;
+}
+
+table tr:nth-child(odd){
+  background-color: #eee;
+}
+
+table tr:nth-child(even){
+  background-color: #DDD;
+}
+
+table td{
+  padding: 1.5rem;
+  text-align: center;
+}
+
+tr .usuario{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user img{
+  width: 5rem;
+  height: 5rem;
+  object-fit: cover;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.user a{
+  text-transform: none;
+  text-decoration: none;
+}
+
+.user a p{
+  font-weight: bold;
+  color: #7a38d4;
+  text-decoration: none;
+}
+
+td .remove{
+  background: none;
+  border: none;
+  color: #7a38d4;
+  cursor: pointer;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+td .remove:hover{
+  color: rgba(0, 0, 255, 0.9);
+}
+
+.repositorio{
+  color: #7a38d4;
+}
+
+
+
+
+.neon{
+  color: white;
+  box-shadow: 0 0 40px rgba(0, 0, 255, 0.9);
+  margin-bottom: 25px;
+  font-size: 15px;
+  font-family: "helvetica neue", helvetica, sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  padding: 5px 10px 10px;
+  display: block;
+
+  animation: pulse 1.5s infinite alternate ease-in-out;    /* Define a animação */
+}
+
+#neon:hover{
+  box-shadow: white;
+  color: rgba(0, 0, 255, 0.9);
+  transition: color 1.0s;
+}
+
+@keyframes pulse {
+
+  0% {
+    box-shadow: 0 0 20px rgba(0, 0, 255, 0.5);
+  }
+
+
+  100% {
+    color: rgba(0, 0, 255, 0.9); /* Brilho aumentado */
+  }
+
+}
+
+@media (max-width: 765px){
+
+  #body{
+    font-size: 1rem;
+    display: flex;
+  }
+
+  #app {
+    margin-left: 15px;
+    margin-right: 15px;
+    display: flex;
+  }
+
+  p{
+    font-size: 0.9rem;
+
+  }
+
+  span{
+    font-size: 1rem;
+  }
+
+  /* p, span{
+    font-size: 1rem;
+  } */
+
+  table th{
+    color: white;
+  }
+
+  table th, td, a {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.0rem;
+  }
+
+  
+} 
