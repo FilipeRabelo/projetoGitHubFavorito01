@@ -53,12 +53,9 @@
       //   },
     }
 
-
     save(){
       localStorage.setItem('@github-favorites:', JSON.stringify(this.entrieDates));
     }
-
-
 
     async add(username){                                  // precisa ir buscar o usuario no github   // ASSINCRONISMO //
 

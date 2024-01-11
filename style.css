@@ -12,6 +12,8 @@
 
   --hue: 194;
   --primary-color: hsl(var(--hue), 100%, 63%);
+
+  --bg-home: url('https://rukminim2.flixcart.com/image/850/1000/kxxl9jk0/poster/y/7/a/small-hjymtxyw-dc-comics-batman-wallpaper-poster-vp-030122-374-original-imaga9xszrprhvhb.jpeg?q=90')
 }
 
 
@@ -33,7 +35,8 @@
 
 body{
   /* background-color: #7a38d4; */
-  background-color: black;
+  /*background-color: black;*/
+  background: var(--bg-home) center fixed;
   font-size: 1.6rem;   /*obrigatorio voltar para 1.6rem o font size*/
   color: var(--text-color);
 }
