@@ -36,7 +36,8 @@
 body{
   /* background-color: #7a38d4; */
   /*background-color: black;*/
-  background: var(--bg-home) center fixed;
+  background: var(--bg-home) center fixed  no-repeat;
+  background-size: cover;
   font-size: 1.6rem;   /*obrigatorio voltar para 1.6rem o font size*/
   color: var(--text-color);
 }
